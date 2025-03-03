@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 90vh;
+      }
+      .cart {
+        transform-style: preserve-3d;
+        transform: perspective(1000px);
+        width: 400px;
+        height: auto;
+        padding: 15px;
+        border-radius: 10px;
+        background: linear-gradient(to right, #fdc830, #f37335);
+      }
+      .head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transform: translateZ(20px);
+      }
+      .head img:nth-child(1) {
+        width: 200px;
+        height: 40px;
+      }
+      .head img:nth-child(2) {
+        width: 80px;
+      }
+      .num {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 24px;
+        color: #fff;
+        margin: 20px 0;
+        transform: translateZ(20px);
+      }
+      .name {
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        text-transform: uppercase;
+        font-size: 20px;
+        font-weight: 700;
+        color: #666;
+        transform: translateZ(20px);
+      }
+      .foot {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transform: translateZ(20px);
+      }
+      .foot .namedate .date {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 15px;
+      }
+      .foot .namedate .date p:nth-child(1) {
+        font-size: 10px;
+        color: #555;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+      }
+      .foot .namedate .date p:nth-child(2) {
+        font-size: 20px;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        color: #666;
+        letter-spacing: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <div data-tilt data-tilt-scale="1.05" class="cart">
+      <div class="head">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Kapital_Bank_logo.svg/1200px-Kapital_Bank_logo.svg.png"
+          alt="kapital"
+        />
+        <img src="https://s.algoritmika.org/a70yh9" alt="chip" />
+      </div>
+      <p class="num">5239 1517 1122 2211</p>
+      <div class="foot">
+        <div class="namedate">
+          <p class="name">AQIL KalbiyeV</p>
+          <div class="date">
+            <p>
+              valid <br />
+              thru
+            </p>
+            <p>04/22</p>
+          </div>
+        </div>
+        <img
+          width="100"
+          src="https://cdn.freebiesupply.com/images/thumbs/2x/mastercard-logo.png"
+          alt="mastercart"
+        />
+      </div>
+    </div>
+
+    <script type="text/javascript" src="/vanilla-tilt.js"></script>
+    <script type="text/javascript">
+      VanillaTilt.init(document.querySelector(".cart"), {
+        max: 25,
+        speed: 10000,
+      });
+
+      VanillaTilt.init(document.querySelectorAll(".cart"));
+    </script>
+  </body>
+</html>
